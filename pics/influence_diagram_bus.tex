@@ -1,0 +1,18 @@
+\documentclass[crop, tikz, border=0pt]{standalone}
+\usetikzlibrary{matrix}
+\usetikzlibrary{bayesnet}
+%\usepackage{color}
+\begin{document}
+%\color{white}
+\begin{tikzpicture}%[draw=black]
+\node[latent] (mean) {$\theta$} ; 
+\node[latent, below=of mean] (time) {$t$} ; 
+\node[shape=rectangle, draw=black, right=of mean, xshift=.1cm] (decision) {$d$} ; 
+\node[det, right=of time] (utility) {$U$};
+\edge{mean}{time}
+\edge{time}{utility}
+\edge{decision}{utility}
+
+ 
+\end{tikzpicture}
+\end{document}
